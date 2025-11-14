@@ -6,6 +6,9 @@
     <title>Новостной сайт</title>
 
     <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="feedback.css">
+    <link rel="stylesheet" href="interesting.css">
+    <link rel="stylesheet" href="footer.css">
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
@@ -63,7 +66,128 @@
         </div>
     </header>
 
+	<!-- Блок интересного -->
+	<section id="interesting">
+		<div class="container">
+
+			<div class="row">
+				<div class="col-sm-12  d-flex justify-content-center">
+					<div class="title">
+						<h2 class="title-main">Преимущества</h2>
+						<p class="title-text">Выбирайте нас потому</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+
+				<!-- Первый пункт -->
+				<div class="col-sm-4">
+					<div class="interesting d-flex">
+						<svg class="interesting-icon" id="battery" viewBox="0 0 512 512"></svg>
+						<div class="interesting-block">
+							<h3 class="interesting-title">Пайка</h3>
+							<p class="interesting-text">Научим паять, лудить, обрабатывать радиокомпоненты</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- Второй пункт  -->
+				<div class="col-sm-4">
+					<div class="interesting d-flex">
+						<svg class="interesting-icon" id="academic-cap" viewBox="0 0 640 512"></svg>
+						<div class="interesting-block">
+							<h3 class="interesting-title">Наставники</h3>
+							<p class="interesting-text">Все имеют профильное образование в робототехнике и программировании</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- Третий пункт -->
+				<div class="col-sm-4">
+					<div class="interesting d-flex">
+						<svg class="interesting-icon" id="hammer" viewBox="0 0 576 512"></svg>
+						<div class="interesting-block">
+							<h3 class="interesting-title">Инструменты</h3>
+							<p class="interesting-text">Научим работать с ручным инструментом</p>
+						</div>
+					</div>
+				</div>				
+			</div>
+
+			<div class="row">
+
+				<!-- Четвертый пункт -->
+				<div class="col-sm-4">
+					<div class="interesting d-flex">
+						<svg class="interesting-icon" id="laptop" viewBox="0 0 640 512"></svg>
+						<div class="interesting-block">
+							<h3 class="interesting-title">Код</h3>
+							<p class="interesting-text">Учим веб-программированию и программированию на Arduino</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- Пятый пункт -->
+				<div class="col-sm-4">
+					<div class="interesting d-flex">
+						<svg class="interesting-icon" id="teacher" viewBox="0 0 640 512"></svg>
+						<div class="interesting-block">
+							<h3 class="interesting-title">Больше практики</h3>
+							<p class="interesting-text">Теория совмещается с практикой, но второго больше</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- Шестой пункт -->
+				<div class="col-sm-4">
+					<div class="interesting d-flex">
+						<svg class="interesting-icon" id="thumbs-up" viewBox="0 0 512 512"></svg>
+						<div class="interesting-block">
+							<h3 class="interesting-title">Отношение</h3>
+							<p class="interesting-text">Никогда не поднимаем голос на детей и относимся к любому с уважением</p>
+						</div>
+					</div>
+				</div>				
+			</div>
+		</div>
+	</section>
+
+	<!-- Блок обратной связи -->
+	<section class="feedback">
+		<div class="container">
+			<div class="col-sm-12 d-flex justify-content-center">
+				<div class="title">
+					<h2 class="title-main">Форма обратной связи</h2>
+					<p class="title-text">Оставьте свой адрес почты и мы с вами свяжемся</p>
+					<div class="feedback-form">
+						<input type="email" class="form-control" name="email" id="email" placeholder="Введите адрес почты">
+						<button id="submit-button" class="form-control btn btn-dark">Отправить</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Подвал -->
+	<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="footer-info">
+						Eduard Suyargulov
+						<br>
+						2025
+						<br>
+						<a href="https://t.me/suyargulov" target="_blank"><svg class="icon" id="telegram" viewBox="0 0 496 512"></svg></a>
+						<a href="#" target="_blank"><svg class="icon" id="vk" viewBox="0 0 496 512"></svg></a>				
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
     <!-- Bootstrap JS -->
-     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 </html>
