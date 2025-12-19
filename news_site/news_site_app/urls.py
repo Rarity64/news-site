@@ -3,6 +3,7 @@ from . import views
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('auth', views.auth, name='auth') # name - это имя маршрута
+    path('auth/', views.auth, name='auth'), # name - это имя маршрута
+    path('reg/', views.reg, name='reg'),
 ]
 

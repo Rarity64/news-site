@@ -8,3 +8,19 @@
 #auth-button {
     margin-top: 1rem;
 }
+
+main {
+    margin-bottom: 4rem;
+}
+
+@media screen and (max-width: 600px) {
+    .auth {
+        margin-top: 4rem;
+        width: 80%;
+        justify-content: center;
+    }
+
+    main {
+        margin-bottom: 2rem;
+    }
+}
