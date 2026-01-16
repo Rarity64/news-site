@@ -10,5 +10,7 @@ urlpatterns = [
 
     #Страница регистрации
     path('reg/', views.reg, name='reg'),
+
+    path('logout/', views.logout_view, name='logout')
 ]
 
