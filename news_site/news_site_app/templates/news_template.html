@@ -1,0 +1,103 @@
+{% load static %}<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+        <!-- Font Awesome подключение -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+        
+        <link rel="stylesheet" href={% static 'css/news.css' %}>
+        <link rel="stylesheet" href={% static 'css/footer.css' %}>
+    </head>
+    <body>
+
+        <!-- Панель навигации -->
+        <nav class="navbar navbar-expand-xl navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <i class="fa-solid fa-newspaper" style="color: #FFD43B;"></i>
+                    Новости
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarWithDropdown" aria-controls="navbarWithDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarWithDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Главные новости</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Статьи</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Email-рассылка</a>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                                По темам
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Россия</a></li>
+                                <li><a class="dropdown-item" href="#">Весь мир</a></li>
+                                <li><a class="dropdown-item" href="#">Бывший СССР</a></li>
+                            </ul>
+                        </li>
+
+                        {% if first_name %}
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                                {{ first_name }}
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href={% url 'logout' %}>Выйти</a></li>
+                            </ul>
+                        </li>
+                        {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" href={% url 'auth' %}>Вход / Регистрация</a>
+                        </li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <main class="container" id="news">
+            <p id="news-title">{{ news.news_title }}</p>
+            <p id="news-subtitle">{{ news.news_subtitle }}</p>
+            <p id="news-pubdate">{{ news.pub_date }}</p>
+            <img id="news-image" src={{ news.image.url }}>
+            <p id="news-text">{{ news.news_text }}</p>
+            <p id="news-author">{{ news.author }}</p>
+        </main>
+        
+        <!-- Подвал -->
+        <footer class="bg-dark">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="footer-info">
+                            Eduard Suyargulov
+                            <br>
+                            2026
+                            <br>
+                            <a href="https://t.me/suyargulov" target="_blank"><svg class="icon" id="telegram" viewBox="0 0 496 512"></svg></a>
+                            <a href="#" target="_blank"><svg class="icon" id="vk" viewBox="0 0 496 512"></svg></a>				
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        
+        <script src={% static 'js/svg-paste.js' %}></script>
+    </body>
+</html>

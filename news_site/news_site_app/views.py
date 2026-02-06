@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import login, logout, authenticate
 from django.http import JsonResponse
 from django.contrib.auth.models import User
+from .models import Item, News
 
 def index(request):
     try:
@@ -53,3 +54,19 @@ def reg(request):
 def logout_view(request):
     logout(request)
     return redirect('index') # перенаправление
+
+# template - это переводится как шаблон
+def news_template(request, id):
+    news = News.objects.get(id = id) # получение данных по ID и конструктор класса
+    context = { 
+        'news' : news
+    }
+    return render(request, 'news_template.html', context)
+
+def item_template(request, id):
+    item = Item.objects.get(id = id)
+    context = { 
+        'item' : item
+    }
+    return render(request, 'item_template.html', context)
+
