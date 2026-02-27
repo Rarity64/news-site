@@ -17,23 +17,40 @@ def item_description_path():
     return os.path.join(settings.LOCAL_FILE_DIR, "item_descriptions")
 
 class News(models.Model):
+
+    types = (
+        ('Нов', 'Новость'),
+        ('Стат', 'Статья')
+    )
+
     news_title = models.CharField(max_length = 100) # заголовок новости
     news_subtitle = models.CharField(max_length = 150) # подзаголовок
     pub_date = models.DateField() # дата публикации
     image = models.ImageField() # изображение к новости
     news_text = models.TextField() # текст новости
     author = models.CharField(max_length = 70) # автор новости
+    news_type = models.CharField(max_length = 30, choices = types)
 
     def __str__(self):
         return self.news_title
 
 class Item(models.Model):
+
+    clothing_types = (
+        (1, 'Головные уборы'),
+        (2, 'Свитеры'),
+        (3, 'Футболки'),
+        (4, 'Штаны'),
+        (5, 'Носки'),
+        (6, 'Обувь')
+    )
+
     item_title = models.CharField(max_length = 100) # название товара
     price = models.IntegerField() # цена
     description = models.TextField() # описание
     photo = models.ImageField() # Фото товара
     material = models.CharField(max_length = 20) # материал
-    clothing_type = models.CharField(max_length = 20) # вид одежды
+    clothing_type = models.CharField(max_length = 20, choices=clothing_types) # вид одежды
     clothing_color = models.CharField(max_length = 20) # цвет одежды
     clothing_size = models.CharField(max_length = 3) # размер одежды
 

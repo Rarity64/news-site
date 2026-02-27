@@ -19,3 +19,16 @@
 #news-author {
     color: #333333;
 }
+
+.news-container {
+    border: solid;
+    border-color: #333333;
+    border-radius: 1rem;
+    margin-top: 1rem;
+    padding: 1rem;
+}
+
+.news-container:hover {
+    background-color: peachpuff;
+    cursor: pointer;
+}

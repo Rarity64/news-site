@@ -17,7 +17,9 @@ urlpatterns = [
 
     path('news/<int:id>', views.news_template, name='news'),
 
-    path('item/<int:id>', views.item_template, name='item')
+    path('item/<int:id>', views.item_template, name='item'),
+
+    path('news/', views.news_list, name='news_list')
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
